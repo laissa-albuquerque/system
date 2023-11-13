@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "bc2a47d5-a4f0-49bc-9e11-5ddcbf37151c",
+		"name": "system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16111887"
+	},
+	"item": [
+		{
+			"name": "criar conta e usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"nome\": \"Lai\",\r\n  \"cpf\": \"10110110100\",\r\n  \"conta\": {\r\n    \"id\": null,\r\n    \"numConta\": \"123456\",\r\n    \"saldo\": 0\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar usuario por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/usuario/{id_user}"
+			},
+			"response": []
+		},
+		{
+			"name": "depositar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1000.0",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/usuario/{id_conta}/depositar"
+			},
+			"response": []
+		},
+		{
+			"name": "cotacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/usuario/cotacao/{id_usuario}"
+			},
+			"response": []
+		}
+	]
+}
