@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "AcaoClient", url = "http://localhost:8082/acoes")
+@FeignClient(name = "AcaoClient", url = "http://docker-home-broker-1:8082/acoes")
 public interface AcaoClient {
 
     @GetMapping()

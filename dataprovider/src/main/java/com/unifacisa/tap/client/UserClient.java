@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.UUID;
 
-@FeignClient(name = "UserClient", url = "http://localhost:8081/usuarios")
+@FeignClient(name = "UserClient", url = "http://docker-bank-1:8081/usuarios")
 public interface UserClient {
 
     @GetMapping("/{uuid}")

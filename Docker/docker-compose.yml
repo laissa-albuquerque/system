@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  home-broker:
+    image: laissapa/home-broker:latest
+    ports:
+      - 8082:8082
+    networks:
+      - services-compose-network
+    expose:
+      - 8082
+  bank:
+    image: laissapa/bank:latest
+    ports:
+      - 8081:8081
+    networks:
+      - services-compose-network
+    expose:
+      - 8081
+  system:
+    image: laissapa/system:latest
+    ports:
+      - 8080:8080
+    networks:
+      - services-compose-network
+    depends_on:
+      - bank
+      - home-broker
+    expose:
+      - 8080
+
+networks:
+  services-compose-network:
+    driver: bridge
